@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/esm/Button";
 import { Link } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
+import axios from "axios";
 
-import notes from "../../data/notes";
 import Accordion from "react-bootstrap/Accordion";
 
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
@@ -20,6 +20,20 @@ const MyNotes = () => {
     if (window.confirm("Are You Sure ?")) {
     }
   };
+
+  const [notes, setNotes] = useState([]);
+
+  const fetchNotes = async () => {
+    const { data } = await axios.get("/api/notes");
+
+    // > CORS ---> Cross Origin Resource Sharing -->packg json   "proxy":"http:/127.0.0.1:8080/",
+    setNotes(data);
+  };
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
   return (
     <MainScreen title="Welcome Back to Gowtham notes..">
       <Link to="createnote">
@@ -30,7 +44,7 @@ const MyNotes = () => {
       </Link>
 
       {notes.map((note) => (
-        <Accordion>
+        <Accordion key={note._id}>
           <Card style={{ margin: 10 }}>
             <Card.Header style={{ display: "flex" }}>
               <span

@@ -4,7 +4,10 @@ const app = express();
 
 // >Importing dotenv for safegaurding the port server
 const dotenv = require("dotenv");
+
+const connectDB = require("./config/db");
 dotenv.config();
+connectDB();
 
 const notes = require("./data/notes");
 
@@ -24,6 +27,6 @@ app.get("/api/notes/:id", (req, res) => {
 const PORT = process.env.PORT || 5000;
 console.log("PORT:", process.env.PORT);
 
-app.listen(PORT, (req, res) => {
+app.listen(PORT, () => {
   console.log(`Server Runs in Port ${PORT}`);
 });
