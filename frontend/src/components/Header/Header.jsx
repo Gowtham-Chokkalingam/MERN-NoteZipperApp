@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../Redux/actions/userActions";
 
-const Header = () => {
+const Header = ({setSearch} ) => {
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const Header = () => {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mx-auto my-2 my-lg-0">
             <Form className="d-flex">
-              <Form.Control type="search" placeholder="Search Notes" className="me-2" aria-label="Search" />
+              <Form.Control type="search" placeholder="Search Notes" className="me-2" aria-label="Search"  onChange={(e)=>setSearch(e.target.value)}/>
             </Form>
           </Nav>
           <Nav className=" my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
