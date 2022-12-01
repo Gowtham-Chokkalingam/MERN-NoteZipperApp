@@ -53,3 +53,4 @@ export const register = (email, name, password) => async (dispatch) => {
     dispatch({ type: USER_REGISTER_FAIL, payload: error.response.data.message || error.message });
   } 
 };
+
