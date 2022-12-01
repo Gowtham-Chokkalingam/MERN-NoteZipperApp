@@ -1,49 +1,51 @@
 .title {
-    font-size: 95px;
-  }
-  .subtitle {
-    font-size: 25px;
-    padding-top: 10px;
-  }
-  .intro-text {
-    width: 100%;
-    text-align: center;
-  }
-  .main {
-    min-height: 93vh;
-    display: flex;
-    align-items: center;
-    background-image: url("../../background1.jpg");
-    background-position: center;
-    background-size: cover;
-  }
+  font-size: 80px;
+}
+.subtitle {
+  font-size: 25px;
+  padding-top: 10px;
+}
+.intro-text {
+  width: 100%;
+  text-align: center;
+  color: blanchedalmond;
+}
+.main {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  /* background-image: url("../../background1.jpg");
+     */
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210204/pngtree-abstract-background-technology-of-data-applications-image_555017.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.buttonContainer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.landingbutton {
+  width: 200px;
+  height: 55px;
+}
+
+@media only screen and (min-width: 1200px) {
   .buttonContainer {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-evenly;
+    padding: 0 200px;
   }
-  
+  .title {
+    padding: 0 100px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .title {
+    font-size: 50px;
+  }
   .landingbutton {
-    width: 200px;
-    height: 55px;
+    width: 150px;
+    height: 50px;
   }
-  
-  @media only screen and (min-width: 1200px) {
-    .buttonContainer {
-      padding: 0 200px;
-    }
-    .title {
-      padding: 0 100px;
-    }
-  }
-  
-  @media only screen and (max-width: 900px) {
-    .title {
-      font-size: 60px;
-    }
-    .landingbutton {
-      width: 150px;
-      height: 50px;
-    }
-  }
-  
+}

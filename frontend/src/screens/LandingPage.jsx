@@ -23,7 +23,7 @@ const LandingPage = () => {
               </Link>
               <Link to="/register">
                 <Button
-                  variant="outline-primary"
+                  variant="secondary"
                   size="lg"
                   className="landingbutton"
                 >
