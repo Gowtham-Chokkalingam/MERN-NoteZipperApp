@@ -14,19 +14,21 @@ app.use(express.json());
 
 //> Importing router from the routes folder
 const userRoutes = require("./routes/userRoute");
+const noteRoutes = require("./routes/noteRoute");
 
-const notes = require("./data/notes");
+// const notes = require("./data/notes");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
-app.get("/", (req, res) => {
-  res.send("API is Running");
-});
+// app.get("/", (req, res) => {
+//   res.send("API is Running");
+// });
 
-app.get("/api/notes", (req, res) => {
-  res.send(notes);
-});
+// app.get("/api/notes", (req, res) => {
+//   res.send(notes);
+// });
 
 app.use("/api/users", userRoutes);
+app.use("/api/notes", noteRoutes); 
 
 app.use(notFound)
 app.use(errorHandler)
