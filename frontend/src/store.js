@@ -1,6 +1,7 @@
 import { legacy_createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
+import { noteListReducer } from "./Redux/reducers/notesReducer";
 import { userLoginReducer, userRegisterReducer } from "./Redux/reducers/userReducer";
 
 const reducer = combineReducers({
@@ -8,16 +9,16 @@ const reducer = combineReducers({
 
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  noteList: noteListReducer,
 });
 
-
-const useInfoFromLocal =localStorage.getItem("userInfo")?JSON.parse(localStorage.getItem('userInfo')):null
+const useInfoFromLocal = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
 
 // const createComposer = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
 
 const initialState = {
-  userLogin:{userInfo:useInfoFromLocal}
-}; 
+  userLogin: { userInfo: useInfoFromLocal },
+};
 
 const middleware = [thunk];
 
