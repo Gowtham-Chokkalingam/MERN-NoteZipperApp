@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 
 const LandingPage = () => {
+  let navigate = useNavigate();
+
+  // let userInfo = localStorage.getItem("userInfo");
+  // useEffect(()=>{
+  
+
+  //   if(userInfo){
+  //     navigate('/mynotes')
+  //   }
+  // },[userInfo,navigate])
+
   return (
     <div className="main">
       <Container>
         <Row>
           <div className="intro-text">
             <div>
-              <h1 className="title">Welcome to Note Zipper</h1>
-              <p className="subtitle">One Safe place for all your notes.</p>
+              <h2 className="title">Welcome to Note Zipper</h2>
+              <p className="subtitle">Save your all notes.</p>
             </div>
             <div className="buttonContainer">
               <Link to="/login">

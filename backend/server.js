@@ -30,6 +30,8 @@ const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 app.use("/api/users", userRoutes);
 app.use("/api/notes", noteRoutes); 
 
+
+
 app.use(notFound)
 app.use(errorHandler)
 

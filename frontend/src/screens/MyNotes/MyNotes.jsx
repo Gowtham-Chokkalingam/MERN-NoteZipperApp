@@ -28,6 +28,7 @@ const MyNotes = ({ search }) => {
   const userLogin = useSelector((state) => state.userLogin);
 
   const { userInfo } = userLogin;
+  console.log('userInfo:', userInfo)
 
   console.log("userInfo:", userInfo.token);
 
@@ -47,7 +48,7 @@ const MyNotes = ({ search }) => {
 
   const deleteHandler = (id) => {
     if (window.confirm("Are You Sure ?")) {
-      dispatch(deleteNoteAction(id));
+      dispatch(deleteNoteAction(id)); 
     }
   };
 
@@ -61,15 +62,15 @@ const MyNotes = ({ search }) => {
   useEffect(() => {
     // fetchNotes();
 
-    dispatch(listNotes());
-
     if (!userInfo.user) {
       navigate("/");
     }
-  }, [dispatch, successCreate, successUpdate, userInfo, successDelete]);
+    dispatch(listNotes());
+
+  }, [dispatch, successCreate, successUpdate, userInfo, successDelete,navigate]);
 
   return (
-    <MainScreen title={`Welcome Back ${userInfo.user.name} notes..`}>
+    <MainScreen title={`Welcome Back ${userInfo.user? userInfo.user.name:"User"} notes..`}>
       <Link to="/createnote">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
           {" "}
