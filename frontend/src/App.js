@@ -8,6 +8,7 @@ import SingleNote from './screens/CreateNote/SIngleNote';
 import LandingPage from './screens/LandingPage';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import MyNotes from './screens/MyNotes/MyNotes';
+import ProfileScreen from './screens/ProfileScreen/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
      <Routes>
      <Route path="/" element={<LandingPage/>} />
      <Route path="/login" element={<LoginScreen/>} />
+     <Route path="/profile" element={<ProfileScreen/>} />
+
      <Route path="/register" element={<RegisterScreen/>} />
      <Route path="/createnote" element={<CreateNote/>} />
      <Route path="/note/:userId" element={<SingleNote />} />
